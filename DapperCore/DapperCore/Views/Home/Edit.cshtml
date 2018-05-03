@@ -1,0 +1,80 @@
+﻿@model DapperCore.Models.User;
+@{
+    ViewData["Title"] = "Edit";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<link href="~/css/site.css" rel="stylesheet" />
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2 class="h3">Edit</h2>
+            @using (Html.BeginForm())
+            {
+
+
+                <table class="table table-responsive table-bordered">
+                    <tr>
+                        <td>
+                            @Html.LabelFor(User => Model.Id)
+                        </td>
+
+                        <td>
+                            @Html.EditorFor(User => Model.Id)
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.LabelFor(User => Model.UserName)
+                        </td>
+
+                        <td>
+                            @Html.EditorFor(User => Model.UserName)
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.LabelFor(User => Model.Url)
+                        </td>
+
+                        <td>
+                            @Html.EditorFor(User => Model.Url)
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            @Html.LabelFor(User => Model.Age)
+                        </td>
+
+                        <td>
+                            @Html.EditorFor(User => Model.Age)
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Cancel", "Index")
+                        </td>
+
+                        <td>
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </td>
+
+                    </tr>
+
+                </table>
+            }
+        </div>
+    </div>
+
+</div>

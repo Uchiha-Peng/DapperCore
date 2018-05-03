@@ -1,0 +1,75 @@
+﻿@model List<DapperCore.Models.User>;
+
+@{
+    ViewData["Title"] = "Index";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<link href="~/css/site.css" rel="stylesheet" />
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2 class="h3">Index</h2>
+            <p class="h4 text-right">
+                @Html.ActionLink("Create", "Create")
+            </p>
+            <table class="table table-responsive table-hover table-bordered">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(User => Model[0].Id)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(User => Model[0].UserName)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(User => Model[0].Url)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(User => Model[0].Age)
+                    </th>
+
+                    <th>
+                        操作
+                    </th>
+                </tr>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(User => item.Id)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(User => item.UserName)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(User => item.Url)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(User => item.Age)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Detail", "Detail", new { id = item.Id }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+
+                }
+            </table>
+
+        </div>
+    </div>
+
+</div>

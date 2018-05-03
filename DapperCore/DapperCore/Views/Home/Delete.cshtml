@@ -1,0 +1,39 @@
+﻿@model DapperCore.Models.User;
+@{
+    ViewData["Title"] = "Delete";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<link href="~/css/site.css" rel="stylesheet" />
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2 class="h3">Delete</h2>
+            @if (Model != null)
+            {
+                @using (Html.BeginForm())
+                {
+                    <p class="h4">您选择了名为：@Model.UserName 的用户，确定要删除吗，将无法恢复！</p>
+
+                    <div class="row">
+                        <div class="col-lg-3 col-lg-offset-3">
+                            @Html.ActionLink("Cancel", "Index")
+                        </div>
+                        <div class="col-lg-3 col-lg-offset-3">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </div>
+                    </div>
+                }
+
+            }
+            else
+            {
+                <p class="h5">用户不存在</p>
+            }
+
+        </div>
+    </div>
+
+</div>

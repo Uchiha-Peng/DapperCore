@@ -1,0 +1,83 @@
+﻿@model DapperCore.Models.User;
+@{
+    ViewData["Title"] = "Create";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<link href="~/css/site.css" rel="stylesheet" />
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2 class="h3">Detail</h2>
+            @if (Model!=null)
+            {
+            <table class="table table-responsive table-bordered">
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(User => Model.Id)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(User => Model.Id)
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(User => Model.UserName)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(User => Model.UserName)
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(User => Model.Url)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(User => Model.Url)
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(User => Model.Age)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(User => Model.Age)
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Back", "Index")
+                    </td>
+
+                </tr>
+
+            </table>
+            }
+            else
+            {
+                    <p class="h5">用户不存在</p>
+            }
+
+        </div>
+    </div>
+
+</div>
